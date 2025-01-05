@@ -40,6 +40,9 @@ Navigate to the frontend directory:
 # Important links: 
   
    Github Link : https://github.com/rutyak/community-website.git
+   
    Deployed Frontend Link : https://new-community-website.netlify.app
+   
    Deployed Backend Link : https://community-website-m9v4.onrender.com
+   
    Working demo video: https://drive.google.com/file/d/1VvcyJw-_fBitqh3WphBrn3ZFZFgxR6mR/view?usp=sharing
