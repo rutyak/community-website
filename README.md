@@ -1,18 +1,4 @@
-MERN Stack Blog Platform:
-
-A simple blog platform built with the MERN stack (MongoDB, Express, React, Node.js) where users can register, log in, and manage their blog posts.
-
-# Features:
-
-User registration and login with JWT authentication
-CRUD operations for blog posts (create, read, update, delete)
-Post tags and search functionality
-Protected routes for creating/editing/deleting posts
-Tech Stack
-Frontend: React
-Backend: Node.js with Express
-Database: MongoDB
-Authentication: JSON Web Tokens (JWT)
+MERN Stack community website:
 
 # Backend setup:
 
