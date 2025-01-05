@@ -8,18 +8,14 @@ const updateController = async (req, res) => {
 
     console.log("Updating user:", { id, name, email, password });
 
-    // Validate required fields
     if (!id) {
       return res.status(400).json({ message: "User ID is required!" });
     }
 
-    // Fetch the existing user to validate existence
     const existingUser = await User.findById(id);
     if (!existingUser) {
       return res.status(404).json({ message: "User not found!" });
     }
-
-    // Upload image if file exists
     let profile;
     if (req.file) {
       console.time("Image Upload");
@@ -27,12 +23,11 @@ const updateController = async (req, res) => {
         resource_type: "auto",
       });
       console.timeEnd("Image Upload");
-      profile = cloudinaryResult.secure_url; // Use HTTPS secure URL
+      profile = cloudinaryResult.secure_url;
     } else {
-      profile = existingUser.profile; // Retain existing profile image if no new file is uploaded
+      profile = existingUser.profile;
     }
 
-    // Prepare updated data
     const updatedData = {
       name: name || existingUser.name,
       email: email || existingUser.email,
@@ -42,7 +37,7 @@ const updateController = async (req, res) => {
 
     console.time("User Update");
     const updatedUser = await User.findByIdAndUpdate(id, updatedData, {
-      new: true, 
+      new: true,
     });
     console.timeEnd("User Update");
 
