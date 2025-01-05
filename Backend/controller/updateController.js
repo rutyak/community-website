@@ -6,8 +6,6 @@ const updateController = async (req, res) => {
     const { id } = req.params;
     const { name, email, password } = req.body;
 
-    console.log("Updating user:", { id, name, email, password });
-
     if (!id) {
       return res.status(400).json({ message: "User ID is required!" });
     }

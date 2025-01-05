@@ -15,12 +15,9 @@ const userCreateController = async (req, res) => {
             return res.status(400).json({ message: "User already exists!" });
         }
 
-        console.time("Upload and Hash");
-        const [cloudinaryResult, hashedPassword] = await Promise.all([
-            cloudinary.uploader.upload(req.file.path, { resource_type: "auto" }),
-            bcrypt.hash(password, 10)
-        ]);
-        console.timeEnd("Upload and Hash");
+        const cloudinaryResult = await cloudinary.uploader.upload(req.file.path, { resource_type: "auto" });
+
+        const hashedPassword = await bcrypt.hash(password, 10);
 
         const newUser = await User.create({
             name,
