@@ -18,15 +18,15 @@ Authentication: JSON Web Tokens (JWT)
 
 Clone the repository:
 
-git clone https://github.com/rutyak/blog-platform.git
+git clone https://github.com/rutyak/community-website.git
 
 Install the required dependencies:
 
 1. npm install
 2. Create a .env file in the root directory and set the following environment variables:
-MongoDB_URL=mongodb+srv://rutikkhandekar123:rutik123@cluster0.ls3e0.mongodb.net/
 PORT=8000
-JWT_SECRET=74481614_blog_platform
+MongoDB_URL=mongodb+srv://rutikkhandekar123:rutik123@cluster0.hccew.mongodb.net/
+JWT_SECRET=community_website_JWT_7448
 3. Start the backend server:
 npm start
 
@@ -34,22 +34,12 @@ npm start
 
 1. User Authentication :
 POST /register: Register a new user.
-Request Body: { username, email, password }
+Request Body: { name, email, password }
 
 POST /login: Log in an existing user.
 Request Body: { email, password }
 Response: { token }
 
-2. Blog Posts :
-GET /fetch/posts: Get all blog posts.
-
-GET /fetch/posts/:id: Get a specific post by ID.
-
-POST /create/posts: Create a new post (requires JWT token).
-
-PUT /update/posts/:id: Update a post (only for the owner of the post, requires JWT token).
-
-DELETE /delete/posts/:id: Delete a post (only for the owner of the post, requires JWT token).
 
 # Frontend Setup
 Navigate to the frontend directory:
@@ -59,10 +49,11 @@ Navigate to the frontend directory:
 3. Start the frontend application: npm start
 4. Create a .env file in the root directory and set the following environment variables: 
   
-  REACT_APP_BACKEND_URL=https://blog-platform-1-pd0w.onrender.com
+  REACT_APP_BACKEND_URL=https://community-website-m9v4.onrender.com
 
 # Important links: 
   
-   Github Link : https://github.com/rutyak/blog-platform.git
-   Deployed Frontend Link : https://new-blog-site.netlify.app/
-   Deployed Backend Link : https://blog-platform-1-pd0w.onrender.com
+   Github Link : https://github.com/rutyak/community-website.git
+   Deployed Frontend Link : https://new-community-website.netlify.app
+   Deployed Backend Link : https://community-website-m9v4.onrender.com
+   Working demo video: https://drive.google.com/file/d/1VvcyJw-_fBitqh3WphBrn3ZFZFgxR6mR/view?usp=sharing
