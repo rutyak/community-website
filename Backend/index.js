@@ -21,9 +21,6 @@ mongoose
     console.error("error in connection...", error.message);
   });
 
-
-app.options('*', cors());
-
 app.use(authRouter);
 
 app.listen(port, () => {
